@@ -5,30 +5,34 @@ import Related from '../components/related'
 import ModalContainer from '../../widgets/containers/modal'
 import Modal from '../../widgets/components/modal'
 import HandleError from '../../error/containers/handle-error'
-
+import VideoPlayer from '../../player/containers/video-player'
 
 class Home extends Component {
+
   state = {
     modalVisible: false,
-  }
+  };
 
   handleOpenModal = () =>{
     this.setState({
       modalVisible: true
     })
-  }
+  };
 
   handleCloseModal = (event) => {
     this.setState({
       modalVisible: false,
     })
-  }
+  };
 
   render() {
     return (
       <HandleError>
         <HomeLayout>
           <Related />
+          <VideoPlayer
+            autoplay={false}
+          />
           <Categories
             categories={this.props.categories}
             handleOpenModal={this.handleOpenModal}
@@ -42,7 +46,7 @@ class Home extends Component {
         </HomeLayout>
       </HandleError>
     )
-  }
+  };
 }
 
 export default Home

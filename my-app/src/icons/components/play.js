@@ -9,4 +9,4 @@ function Play(props){
     )
 }
 
-exports default Play
+export default Play
